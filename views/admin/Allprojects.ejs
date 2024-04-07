@@ -1,0 +1,60 @@
+<% layout('admin/Boilerplate') %>
+
+<h3 class="modal-title text-dark mb-4">All Projects</h3>
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Project Posts</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body row">
+            <div class="col-9 col-md-8 col-sm-12">
+                <table class="table table-striped postBlogTable">
+                    <thead class="background-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Project Date</th>
+                            <th>Client</th>
+                            <th>Category</th>
+                            <th>View</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="postLatestTableBlog">
+
+                        <% if(projects.length) {%>
+                        <% for(let index=0; index<projects.length; index++) {%>
+                        <tr>
+                            <td><%= projects[index].portfolioId %></td>
+                            <td><%= projects[index].title%></td>
+                            <td><%= projects[index].projectDate%></td>
+                            <td><%= projects[index].client%></td>
+                            <td><%= projects[index].category%></td>
+                            <td><a href="/admin/allprojects/<%=projects[index].portfolioId%>"
+                                    class="btn btn-outline-warning">View</a></td>
+                            <td><a href="/admin/delete/<%=projects[index].portfolioId%>"
+                                    class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" style="margin-left: 10px">
+                <div class="card text-center totalcard mb-3">
+                    <div class="card-body">
+                        <h3>Total Project Posts</h3>
+                        <h4 class="display-4">
+                            <span id="postCount"> <%= projects.length %> </span>
+                        </h4>
+                        <a href="/admin/addportfolio" class="btn btn-outline-grey bg-light btn-sm"><i
+                                class="fas fa-plus"></i>
+                            Add new Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

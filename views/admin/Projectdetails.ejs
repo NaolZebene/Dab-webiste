@@ -1,0 +1,35 @@
+<% layout('admin/Boilerplate') %>
+
+<div class="row gy-4">
+    <div class="col-lg-8">
+        <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                    <img src="<%=project[0].path%> " alt="" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+                <li><strong>Category</strong>: <%=project[0].category%> </li>
+                <li><strong>Client</strong>: <%= project[0].client %> </li>
+                <li><strong>Project date</strong>: <%= project[0].projectDate%></li>
+
+            </ul>
+        </div>
+        <div class="portfolio-description">
+            <h2><%=project[0].title%> </h2>
+            <%- project[0].projectBody%>
+        </div>
+
+        <span><a href="/admin/allprojects/<%=project[0].portfolioId%>/<%=project[0].portfolioId%>"
+                class="btn btn-outline-primary">Edit</a></span>
+        <span><a href="/admin/delete/<%=project[0].portfolioId%>" class="btn btn-outline-danger">Delete</a></span>
+
+    </div>
+</div>

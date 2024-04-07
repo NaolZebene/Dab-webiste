@@ -1,0 +1,33 @@
+<% layout('admin/Boilerplate') %>
+
+
+<h3 class="modal-title text-dark mb-4">New Testimonial</h3>
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">Add Testimonial Post</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form class="validated-form" id="postForm" method="post" action="/admin/addtestimonial" novalidate>
+                <div class="form-group">
+                    <label for="title">Name</label>
+                    <input type="text" name="testimonial[author]" class="form-control" id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="title">Role</label>
+                    <input type="text" name="testimonial[role]" class="form-control" id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="body">Body</label>
+                        <textarea name="testimonial[body]" class="form-control" id="postBody" required></textarea>
+                        <small class="form-text text-muted">to paste use ctrl + shift + v</small>
+                    </div>
+                </div>
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Add Testimonial
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

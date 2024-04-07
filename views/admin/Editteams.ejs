@@ -1,0 +1,38 @@
+<% layout('admin/Boilerplate') %>
+
+
+<h3 class="modal-title text-dark mb-4">Edit Team</h3>
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">Edit Team Member</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form class="validated-form" id="postForm" method="post" action="/admin/editteam/<%=oneTeam[0].teamId%>"
+                enctype="multipart/form-data" novalidate>
+
+                <div class="form-group">
+                    <label for="title">Name</label>
+                    <input type="text" name="team[name]" value="<%=oneTeam[0].name%>" class="form-control"
+                        id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="title">Role</label>
+                    <input type="text" name="team[role]" value="<%=oneTeam[0].role%>" class="form-control"
+                        id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Thumbnail Image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="thumbImage" required />
+                        <label for="image" class="custom-file-label">Choose File</label>
+                        <small class="form-text text-muted">Better to use < 3Mb</small>
+                    </div>
+                </div>
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Edit Team Member
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

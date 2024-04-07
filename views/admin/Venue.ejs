@@ -1,0 +1,81 @@
+<% layout('admin/Boilerplate') %>
+
+<h3 class="modal-title text-dark mb-4">Event Venue</h3>
+<!-- first part show Venue -->
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Event Venue</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body row">
+            <div class="col-9 col-md-8 col-sm-12">
+                <table class="table table-striped postEventTable">
+                    <thead class="background-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="EventLatestTableVenue">
+                        <% if(allvenue.length) {%>
+                        <% for(let index=0; index < allvenue.length; index++) {%>
+                        <tr>
+                            <td><%= allvenue[index].venueId %></td>
+                            <td><%= allvenue[index].title%></td>
+                            <td><%= allvenue[index].description%></td>
+                            <td><a href="/admin/editvenueform/<%=allvenue[index].venueId%>"
+                                    class="btn btn-outline-primary">Edit</a></td>
+                            <td><a href="/admin/deletevenue/<%= allvenue[index].venueId%>"
+                                    class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" style="margin-left: 10px">
+                <div class="card text-center totalcard mb-3">
+                    <div class="card-body">
+                        <h3>Total Event Venue</h3>
+                        <h4 class="display-4">
+                            <span id="eventCount"><%= allvenue.length %> </span>
+                        </h4>
+                        <a href="#addEventVenues" class="btn btn-outline-grey bg-light btn-sm"><i
+                                class="fas fa-plus"></i> Add Event Venue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- second part -->
+<div class="card shadow topmargin" id="addEventVenues">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">
+            All Event Venues
+        </p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form id="postForm" class="validated-form" action="/admin/venue" method="post" novalidate>
+                <div class="form-group">
+                    <label for="eventVenueTitle">Title</label>
+                    <input type="text" class="form-control" id="eventVenueTitle" name="venue[title]" required />
+                </div>
+                <div class="form-group">
+                    <label for="eventVenueDescription">Description</label>
+                    <input type="text" class="form-control" id="eventVenueDescription" required
+                        name="venue[description]" />
+                </div>
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Add Event Venue
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

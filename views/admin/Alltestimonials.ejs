@@ -1,0 +1,57 @@
+<% layout('admin/Boilerplate') %>
+
+<h3 class="modal-title text-dark mb-4">All Testimonial</h3>
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Testimonial Posts</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body row">
+            <div class="col-9 col-md-8 col-sm-12">
+                <table class="table table-striped postBlogTable">
+                    <thead class="background-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="postLatestTableBlog">
+
+                        <% if(testimonials.length) {%>
+                        <% for(let index=0; index<testimonials.length; index++) {%>
+                        <tr>
+                            <td><%= testimonials[index].testimonialId %></td>
+                            <td><%= testimonials[index].author%></td>
+                            <td><%= testimonials[index].role%></td>
+
+                            <td><a href="/admin/alltestimonials/<%=testimonials[index].testimonialId%>"
+                                    class="btn btn-outline-primary">Edit</a></td>
+                            <td><a href="/admin/alltestimonials/delete/<%=testimonials[index].testimonialId%>"
+                                    class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" style="margin-left: 10px">
+                <div class="card text-center totalcard mb-3">
+                    <div class="card-body">
+                        <h3>Total Testimonial Posts</h3>
+                        <h4 class="display-4">
+                            <span id="postCount"><%= testimonials.length %> </span>
+                        </h4>
+                        <a href="/admin/addtestimonial" class="btn btn-outline-grey bg-light btn-sm"><i
+                                class="fas fa-plus"></i>
+                            Add new Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

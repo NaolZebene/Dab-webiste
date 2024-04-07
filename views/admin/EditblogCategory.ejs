@@ -1,0 +1,20 @@
+<% layout('admin/Boilerplate') %>
+
+<div class="modal-body">
+    <form id="postForm" class="validated-form" action="/admin/editcategory/<%=oneCategory[0].categoryId%>" method="post"
+        novalidate>
+        <div class="form-group">
+            <label for="catagoryTitle">Title</label>
+            <input type="text" class="form-control" id="catagoryTitle" value="<%=oneCategory[0].title%>"
+                name="category[title]" required />
+        </div>
+        <div class="form-group">
+            <label for="categoryDescription">Description</label>
+            <input type="text" class="form-control" id="categoryDescription" value="<%=oneCategory[0].description%>"
+                name="category[description]" required />
+        </div>
+        <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+            Edit Catagory
+        </button>
+    </form>
+</div>

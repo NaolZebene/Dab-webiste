@@ -1,0 +1,22 @@
+<% layout('admin/Boilerplate') %>
+<div class="container">
+    <div class="d-sm-flex flex-wrap ">
+        <% if(allteams.length){%>
+        <% for(let index=0; index < allteams.length; index++){ %>
+        <div class="card w-25 mr-5 mb-5">
+            <img class="card-img-top " src="/<%=allteams[index].path%>" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><%=allteams[index].name%></h5>
+                <p class="card-text"><%=allteams[index].role %> </p>
+                <span><a href="/admin/editteamsform/<%=allteams[0].teamId%>"
+                        class="btn btn-outline-primary">Edit</a></span>
+                <span><a href="/admin/deleteteam/<%=allteams[0].teamId%>"
+                        class="btn btn-outline-danger">Delete</a></span>
+
+            </div>
+        </div>
+
+        <% } %>
+        <% } %>
+    </div>
+</div>

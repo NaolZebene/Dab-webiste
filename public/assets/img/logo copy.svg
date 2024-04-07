@@ -1,0 +1,48 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 433.44 322.7"><defs>
+<style>
+    .cls-5{
+       fill:#fff;
+    }
+    .cls-2,
+    .cls-3,
+    .cls-4{
+        font-size:244.43px;
+        stroke:#fff;
+        stroke-miterlimit:10;stroke-width:5px;
+        font-family:CenturyGothic-Bold, Century Gothic;
+        font-weight:700;
+    }
+    .cls-2,
+    .cls-4{
+        fill:#0a5775;
+    }
+    .cls-2{
+        letter-spacing:-0.18em;
+    }
+    .cls-3{
+        fill:#57b947;
+    }
+    .cls-3,
+    .cls-4{
+        letter-spacing:-0.18em;
+    }
+    .cls-5{
+        fill-rule:evenodd;
+    }
+    .cls-6{
+        font-size:33.27px;
+        fill:#145775;
+        font-family:CenturyGothic, Century Gothic;
+        font-weight:600;
+    }
+</style>
+</defs>
+<title>logo</title>
+<text class="cls-2" transform="translate(22.57 212.46)">d </text>
+<text class="cls-3" transform="translate(142.44 212.46)">a</text>
+<text class="cls-4" transform="translate(265.03 212.46)">b</text>
+<path class="cls-5" d="M136.71,399.87a60.09,60.09,0,0,1-2.13-79.11,59.55,59.55,0,0,0,80.54,87.66A60.09,60.09,0,0,1,136.71,399.87Z" transform="translate(-81.72 -223.3)"/>
+<path class="cls-5" d="M474.89,399.87A60.09,60.09,0,0,0,477,320.76a59.55,59.55,0,0,1-80.54,87.66A60.1,60.1,0,0,0,474.89,399.87Z" transform="translate(-81.72 -223.3)"/>
+<text class="cls-6" transform="translate(40.42 256.89)">development research</text>
+<text class="cls-6" transform="translate(216.36 288.92)">and training</text>
+</svg>

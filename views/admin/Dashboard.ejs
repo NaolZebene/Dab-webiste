@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Admin page - DAB</title>
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+        <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css" />
+        <link rel="stylesheet" href="/assets/css/app.css" />
+
+
+    </head>
+
+    <body id="page-top">
+        <div id="wrapper">
+            <!-- left navigation part -->
+            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+                <div class="container-fluid d-flex flex-column p-0">
+                    <div class="logo-div">
+                        <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0 logo-link"
+                            href="#">
+                            <div class="sidebar-brand-icon">
+                                <img src="/assets/img/logo.svg" height="60" />
+                            </div>
+                            <div class="sidebar-brand-text mx-3"><span></span></div>
+                        </a>
+                    </div>
+                    <hr class="sidebar-divider my-0" />
+                    <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                        <!-- dashboard -->
+                        <li id="dashboard" class="nav-item" role="presentation">
+                            <a class="nav-link active selected-nav" href="index.html"><i
+                                    class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                            <!-- sub nav bar for dashboard-->
+                        </li>
+                        <!-- blog post -->
+                        <li id="blog" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fab fa-blogger-b"></i><span>Blog post</span></a>
+                            <!-- sub nav bar for blog post -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Blog/all-blogs.html"><i
+                                            class="fa fa-border-all"></i><span>All
+                                            blogs</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Blog/blog-new.html"><i class="fa fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Blog/blog-catagories.html"><i
+                                            class="fa fa-list-alt"></i><span>Catagories</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Blog/blog-tags.html"><i
+                                            class="fas fa-tag"></i><span>Tags</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Events -->
+                        <li id="events" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i><span>Events</span></a>
+                            <!-- sub nav bar for evetns -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/all-events.html"><i
+                                            class="fa fa-border-all"></i><span>All-events</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/event-new.html"><i class="fa fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/event-catagories.html"><i
+                                            class="fas fa-list-alt"></i><span>Catagories</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/event-tags.html"><i
+                                            class="fas fa-tag"></i><span>Tags</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/venue.html"><i
+                                            class="fas fa-location-arrow"></i><span>Venue</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Event/organizers.html"><i
+                                            class="fas fa-columns"></i><span>Organizers</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- portfolio -->
+                        <li id="portfolio" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fa fa-briefcase"></i><span>Portfolio</span></a>
+                            <!-- sub nav bar for portfolio -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Portfolio/all-projects.html"><i
+                                            class="fas fa-border-all"></i><span>All
+                                            Projects</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Portfolio/portfolio-new.html"><i
+                                            class="fas fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Portfolio/portfolio-catagories.html"><i
+                                            class="fas fa-list-alt"></i><span>Catagories</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Testimonial -->
+                        <li id="testimonial" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fa fa-comment-dots"></i><span>Testimonial</span></a>
+                            <!-- sub nav bar for Testimonial -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="testimonial/all-testimonials.html"><i
+                                            class="fa fa-border-all"></i><span>All
+                                            testimonial</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Testimonial/testimonial-new.html"><i
+                                            class="fas fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- teams -->
+                        <li id="team" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fa fa-user-plus"></i><span>Team</span></a>
+                            <!-- sub nav bar for teams -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Team/Teams.html"><i
+                                            class="fas fa-border-all"></i><span>Teams</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Team/team-new.html"><i class="fas fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- user -->
+                        <li id="user" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fas fa-user"></i><span>User</span></a>
+                            <!-- sub nav bar for user -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="User/all-users.html"><i
+                                            class="fas fa-border-all"></i><span>Users</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="User/user-new.html"><i class="fas fa-plus"></i><span>Add
+                                            new</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="User/profile.html"><i
+                                            class="fas fa-user"></i><span>Profile</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- settings -->
+                        <li id="setting" class="nav-item" role="presentation">
+                            <a class="nav-link" href="#"><i class="fa fa-wrench"></i><span>Settings</span></a>
+                            <!-- sub nav bar for setting -->
+                            <ul class="nav-childs">
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Setting/general.html"><i
+                                            class="fa fa-shield-alt"></i><span>General</span></a>
+                                </li>
+                                <li class="nav-childs nav-item" role="presentation">
+                                    <a class="nav-link" href="Setting/security.html"><i
+                                            class="fas fa-lock"></i><span>Security</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- left nav button -->
+                    <div class="text-center d-none d-md-inline">
+                        <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+                    </div>
+                </div>
+                <!-- End of left navigations -->
+                <!-- top nav bar and main container -->
+            </nav>
+            <div class="d-flex flex-column" id="content-wrapper">
+                <div id="content">
+                    <!-- top nav bar -->
+                    <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                        <div class="topnavbar">
+                            <div class="comtitle">
+                                <span>
+                                    <h3 class="text-dark mb-0">
+                                        DAB Deveopment, Research and Traning
+                                    </h3>
+                                </span>
+                            </div>
+                            <div class="nav-item dropdown no-arrow">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"
+                                    href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Admin</span><img
+                                        class="border rounded-circle img-profile"
+                                        src="/assets/img/avatars/default.png" /></a>
+                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu">
+                                    <a class="dropdown-item" role="presentation" href="profile.html"><i
+                                            class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
+                                        class="dropdown-item" role="presentation" href="setting.html"><i
+                                            class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+                                    <a class="dropdown-item" role="presentation" href="activity.html"><i
+                                            class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
+                                        log</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" role="presentation" href="login.html"><i
+                                            class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- end of top nav bar -->
+
+                    <!-- main container  -->
+                    <div class="container-fluid"></div>
+                </div>
+
+                <!-- footer part-->
+                <footer class="bg-white sticky-footer">
+                    <div class="container my-auto">
+                        <div class="text-center my-auto copyright">
+                            <span>Copyright © DAB-DRT 2022</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/chart.min.js"></script>
+        <script src="/assets/js/bs-init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+        <!-- <script src="assets/js/jquery.min.js"></script> -->
+        <script src="/assets/js/theme.js"></script>
+        <script src="/assets/js/app.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,20 @@
+<% layout('admin/Boilerplate') %>
+
+<div class="modal-body">
+    <form id="postForm" method="post" action="/admin/editeventtag/<%=oneEventTag[0].eventTagId%>" class="validated-form"
+        novalidate>
+        <div class="form-group">
+            <label for="eventTagTitle">Title</label>
+            <input type="text" class="form-control" id="eventTagTitle" value="<%=oneEventTag[0].title%>"
+                name="tag[title]" required />
+        </div>
+        <div class="form-group">
+            <label for="eventTagDescription">Description</label>
+            <input type="text" class="form-control" id="eventTagDescription" value="<%=oneEventTag[00].description%>"
+                name="tag[description]" required />
+        </div>
+        <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+            Edit Event Tag
+        </button>
+    </form>
+</div>

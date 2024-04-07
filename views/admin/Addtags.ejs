@@ -1,0 +1,77 @@
+<% layout('admin/Boilerplate') %>
+
+<h3 class="modal-title text-dark mb-4">Blog Tags</h3>
+<!-- first part show Tags -->
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Blog Tags</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body row">
+            <div class="col-9 col-md-8 col-sm-12">
+                <table class="table table-striped postBlogTable">
+                    <thead class="background-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="postLatestTabletag">
+
+                        <% if(alltags.length) {%>
+                        <% for(let index=0; index < alltags.length; index++) {%>
+                        <tr>
+                            <td><%= alltags[index].categoryId %></td>
+                            <td><%= alltags[index].title%></td>
+                            <td><%= alltags[index].description%></td>
+                            <td><a href="/admin/editblogtags/<%=alltags[index].blogtagId%>"
+                                    class="btn btn-outline-primary">Edit</a></td>
+                            <td><a href="/admin/deleteblogtags/<%=alltags[index].blogtagId%>"
+                                    class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2" style="margin-left: 10px">
+                <div class="card text-center totalcard mb-3">
+                    <div class="card-body">
+                        <h3>Total Blog Tags</h3>
+                        <h4 class="display-4">
+                            <span id="postCount"><%= alltags.length %> </span>
+                        </h4>
+                        <a href="#addTags" class="btn btn-outline-grey bg-light btn-sm"><i class="fas fa-plus"></i> Add
+                            a new Tag</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- second part -->
+<div class="card shadow topmargin" id="addTags">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Blog Tags</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form id="postForm" action="/admin/addblogtags" method="post" class="validated-form" novalidate>
+                <div class="form-group">
+                    <label for="tagTitle">Title</label>
+                    <input type="text" class="form-control" id="tagTitle" name="blogtag[title]" required />
+                </div>
+                <div class="form-group">
+                    <label for="tagDescription">Description</label>
+                    <input type="text" class="form-control" id="tagDescription" name="blogtag[description]" required />
+                </div>
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Add Tag
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

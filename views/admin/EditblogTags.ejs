@@ -1,0 +1,20 @@
+<% layout('admin/Boilerplate') %>
+
+<div class="modal-body">
+    <form id="postForm" action="/admin/editblogtag/<%=oneTag[0].blogtagId%>" method="post" class="validated-form"
+        novalidate>
+        <div class="form-group">
+            <label for="tagTitle">Title</label>
+            <input type="text" class="form-control" id="tagTitle" name="blogtag[title]" value="<%=oneTag[0].title%>"
+                required />
+        </div>
+        <div class="form-group">
+            <label for="tagDescription">Description</label>
+            <input type="text" class="form-control" id="tagDescription" value="<%=oneTag[0].description%>"
+                name="blogtag[description]" required />
+        </div>
+        <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+            Edit Tag
+        </button>
+    </form>
+</div>

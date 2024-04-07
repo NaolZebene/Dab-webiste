@@ -1,0 +1,78 @@
+<% layout('admin/Boilerplate') %>
+
+
+<h3 class="modal-title text-dark mb-4">Edit Blog</h3>
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">Edit Blog Post</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form class="validated-form" id="postForm" method="post" action="/admin/editblog/<%=Oneblog[0].blogId%>"
+                enctype="multipart/form-data" novalidate>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="blog[title]" value="<%=Oneblog[0].title%>" class="form-control"
+                        id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="title">Author</label>
+                    <input type="text" name="blog[author]" value="<%=Oneblog[0].author%>" class="form-control"
+                        id="postTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="blog[blogCategory]" class="form-control" id="postCategory" required>
+                        <% if(categoryData.length){ %>
+                        <% for(let index =0; index<categoryData.length; index++){%>
+                        <option value="<%= categoryData[index].title%>"><%= categoryData[index].title%></option>
+                        <% } %>
+                        <% } %>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <select name="blog[blogTags]" class="form-control" id="postTags" multiple required>
+                        <% if(tagData.length){ %>
+                        <% for(let index =0; index<tagData.length; index++){%>
+                        <option value="<%= tagData[index].title%>"><%= tagData[index].title%></option>
+                        <% } %>
+                        <% } %>
+                    </select>
+
+                    <small class="form-text text-muted">press ctrl key to select more than one option</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Upload Thumbnail Image</label>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="image" name="thumbImage" required />
+                        <label for="image" class="custom-file-label">Choose File</label>
+                        <small class="form-text text-muted">Better to use < 3Mb</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Body</label>
+                        <textarea name="editor1" class="form-control" id="postBody"
+                            required><%-Oneblog[0].body%></textarea>
+                        <small class="form-text text-muted">to paste use ctrl + shift + v</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="blog[status]" id="status" class="form-control" id="postCategory" required>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Add Post
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

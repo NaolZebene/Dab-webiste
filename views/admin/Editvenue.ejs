@@ -1,0 +1,20 @@
+<% layout('admin/Boilerplate') %>
+
+<div class="modal-body">
+    <form id="postForm" class="validated-form" action="/admin/editvenue/<%=oneVenue[0].venueId%>" method="post"
+        novalidate>
+        <div class="form-group">
+            <label for="eventVenueTitle">Title</label>
+            <input type="text" class="form-control" id="eventVenueTitle" value="<%=oneVenue[0].title%>"
+                name="venue[title]" required />
+        </div>
+        <div class="form-group">
+            <label for="eventVenueDescription">Description</label>
+            <input type="text" class="form-control" id="eventVenueDescription" value="<%=oneVenue[0].description%>"
+                required name="venue[description]" />
+        </div>
+        <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+            Edit Event Venue
+        </button>
+    </form>
+</div>

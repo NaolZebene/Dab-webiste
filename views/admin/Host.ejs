@@ -1,0 +1,82 @@
+<% layout('admin/Boilerplate') %>
+
+
+<h3 class="modal-title text-dark mb-4">Event Organizers</h3>
+<!-- first part show organizers -->
+<div class="card shadow">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">All Organizers</p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body row">
+            <div class="col-9 col-md-8 col-sm-12">
+                <table class="table table-striped postEventTable">
+                    <thead class="background-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="EventLatestTableOrganizer">
+
+                        <% if(hosts.length) {%>
+                        <% for(let index=0; index < hosts.length; index++) {%>
+                        <tr>
+                            <td><%= hosts[index].hostId %></td>
+                            <td><%= hosts[index].title%></td>
+                            <td><%= hosts[index].description%></td>
+                            <td><a href="/admin/edithostform/<%=hosts[index].hostId%>"
+                                    class="btn btn-outline-primary">Edit</a></td>
+                            <td><a href="/admin/deletehost/<%=hosts[index].hostId%>"
+                                    class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <div class="card text-center totalcard mb-3">
+                    <div class="card-body">
+                        <h3>Total Event Organizers</h3>
+                        <h4 class="display-4">
+                            <span id="eventOrganizerCount"><%= hosts.length %> </span>
+                        </h4>
+                        <a href="#addEventOrganizers" class="btn btn-outline-grey bg-light btn-sm"><i
+                                class="fas fa-plus"></i> Add Event Organizer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- second part -->
+<div class="card shadow topmargin" id="addEventOrganizers">
+    <div class="card-header py-3">
+        <p class="text-primary m-0 font-weight-bold">
+            All Event Organizers
+        </p>
+    </div>
+    <div class="card-body">
+        <div class="modal-body">
+            <form id="OrganizerForm" action="/admin/hosts" method="post" class="validated-form" novalidate>
+                <div class="form-group">
+                    <label for="eventOrganizerTitle">Title</label>
+                    <input type="text" class="form-control" id="eventOrganizerTitle" name="host[title]" required />
+                </div>
+                <div class="form-group">
+                    <label for="eventOrganizerDescription">Description</label>
+                    <input type="text" class="form-control" id="eventOrganizerDescription" name="host[description]"
+                        required />
+                </div>
+                <button class="btn btn-primary float-right" data-dismiss="modal" style="margin: 30px 50px">
+                    Add Event Organizer
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
